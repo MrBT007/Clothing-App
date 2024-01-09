@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Activity.SignInActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_sign_in"
+                android:layout_marginTop="85dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:textStyle="bold"
+                android:textColor="@color/custom_black"
+                android:fontFamily="@font/heebo_medium"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heebo_regular"
+                android:textColor="@color/custom_grey"
+                android:text="Hi! Welcome back, you've been missed"
+                />
+
+            <LinearLayout
+                android:id="@+id/ll_email_from_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="-10dp"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    app:cardBackgroundColor="@color/custom_brown"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:padding="12dp"
+                        android:src="@drawable/email" />
+                </androidx.cardview.widget.CardView>
+
+                <EditText
+                    android:id="@+id/et_email_from_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Email Id"
+                    android:paddingStart="20dp"
+                    android:textColor="@color/custom_black"
+                    android:textColorHint="@color/custom_grey"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/heebo_medium">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_password_from_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="-10dp"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    app:cardBackgroundColor="@color/custom_brown"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:padding="12dp"
+                        android:src="@drawable/password_lock" />
+                </androidx.cardview.widget.CardView>
+
+                <EditText
+                    android:id="@+id/et_password_from_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="20dp"
+                    android:textColor="@color/custom_black"
+                    android:textColorHint="@color/custom_grey"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/heebo_medium">
+
+                </EditText>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login_from_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="@font/heebo_bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Sign In"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="@color/custom_brown"
+                app:cornerRadius="10dp"
+                app:elevation="10dp"
+                app:icon="@drawable/ic_baseline_arrow_forward_24"
+                app:iconGravity="textEnd"
+                app:iconTint="@color/white" />
+
+            <Button
+                android:id="@+id/btn_forgot_password_from_login"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/heebo_bold"
+                android:text="Forgot Password?"
+                android:textColor="@color/custom_black"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@color/custom_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="OR SIGN IN WITH"
+                    android:textColor="@color/custom_black"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/heebo_bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_weight="1"
+                    android:background="@color/custom_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:elevation="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="120dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:padding="5dp"
+                        android:src="@drawable/google_btn" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:elevation="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="35dp"
+                    app:cardCornerRadius="120dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:padding="5dp"
+                        android:src="@drawable/facebook_btn" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@color/custom_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="OR"
+                    android:textColor="@color/custom_black"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/heebo_bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_weight="1"
+                    android:background="@color/custom_black" />
+
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_signup_from_login"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="@font/heebo_bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Sign Up"
+                android:textAllCaps="false"
+                android:textColor="@color/custom_black"
+                android:textSize="15sp"
+                app:cornerRadius="10dp"
+                app:elevation="10dp"
+                app:icon="@drawable/ic_baseline_arrow_forward_24"
+                app:iconGravity="textEnd"
+                app:iconTint="@color/custom_brown"
+                app:strokeColor="@color/custom_brown"
+                app:strokeWidth="2dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
