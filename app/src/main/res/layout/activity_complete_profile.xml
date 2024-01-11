@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Activity.CompleteProfileActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete Your Profile"
+                android:layout_marginTop="75dp"
+                android:fontFamily="@font/heebo_bold"
+                android:textColor="@color/custom_black"
+                android:layout_gravity="center_horizontal"
+                android:textSize="25sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heebo_regular"
+                android:textColor="@color/custom_grey"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="Don't worry, only you can see your personal data.\nNo one else will be able to see it."
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:padding="10dp"
+                    android:src="@drawable/man"
+                    app:strokeWidth="3dp"
+                    app:strokeColor="@color/custom_grey"
+                    android:layout_gravity="center_horizontal"
+                    app:shapeAppearanceOverlay="@style/circularImageViewShape"/>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="120dp"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="4dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="-50dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        app:shapeAppearanceOverlay="@style/circularImageViewShape"
+                        android:src="@drawable/edit"
+                        android:background="@color/custom_brown"
+                        />
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                app:boxStrokeColor="@color/custom_brown"
+                app:hintTextColor="@color/custom_brown"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name_complete_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/custom_black"
+                    android:hint="Name"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                app:boxStrokeColor="@color/custom_brown"
+                app:hintTextColor="@color/custom_brown"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email_complete_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/custom_black"
+                    android:hint="Email ID"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    app:boxStrokeColor="@color/custom_brown"
+                    app:hintTextColor="@color/custom_brown"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_mobile_number_complete_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/custom_black"
+                        android:inputType="phone"
+                        android:hint="Mobile NUmber"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

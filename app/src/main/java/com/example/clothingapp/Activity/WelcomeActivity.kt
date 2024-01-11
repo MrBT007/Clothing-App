@@ -18,7 +18,7 @@ class WelcomeActivity : BaseActivity() {
         }
 
         binding.btnSignInWelcome.setOnClickListener{
-            Toast.makeText(this, "Sign In To be implemented", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this,SignInActivity::class.java))
         }
     }
 
