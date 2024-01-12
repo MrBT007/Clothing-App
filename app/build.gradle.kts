@@ -60,5 +60,6 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
 
     implementation("com.cuneytayyildiz:onboarder:2.0.0")
+    implementation("com.github.Ajinkrishnak:CountryCodePicker:1.0.2")
 
 }

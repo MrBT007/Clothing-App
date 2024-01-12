@@ -45,6 +45,7 @@
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="150dp"
+                    android:id="@+id/iv_userImage_complete_profile"
                     android:layout_height="150dp"
                     android:padding="10dp"
                     android:src="@drawable/man"
@@ -63,6 +64,7 @@
                     android:layout_marginStart="-50dp">
 
                     <ImageView
+                        android:id="@+id/btn_change_picture_complete_profile"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="10dp"
@@ -87,6 +89,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_name_complete_profile"
                     android:layout_width="match_parent"
+                    android:fontFamily="@font/heebo_medium"
                     android:layout_height="match_parent"
                     android:textColor="@color/custom_black"
                     android:hint="Name"/>
@@ -105,6 +108,7 @@
                     android:id="@+id/et_email_complete_profile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/heebo_medium"
                     android:textColor="@color/custom_black"
                     android:hint="Email ID"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -117,6 +121,20 @@
                 android:layout_marginEnd="25dp"
                 android:orientation="horizontal">
 
+                <com.ak.ui.CountryCodePicker
+                    android:id="@+id/countryCode_complete_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:contentColor="@color/black"
+                    app:fontFamily="@font/montserrat_medium"
+                    app:showFlag="true"
+                    android:gravity="center"
+                    app:defaultNameCode="in"
+                    app:showArrowDown="true"
+                    app:showNameCode="false"
+                    app:arrowSize="@dimen/_1sdp"
+                    app:textSize="@dimen/_12ssp" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     app:boxStrokeColor="@color/custom_brown"
@@ -128,11 +146,56 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/custom_black"
+                        android:fontFamily="@font/heebo_medium"
                         android:inputType="phone"
-                        android:hint="Mobile NUmber"/>
+                        android:hint="Mobile Number"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                app:boxStrokeColor="@color/custom_brown"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:textColor="@color/custom_grey"
+                    android:fontFamily="@font/heebo_medium"
+                    android:textSize="16sp"
+                    android:id="@+id/tv_autoComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    android:theme="@style/Spinner"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:cursorVisible="false"
+                    android:text="Select Gender"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_complete_from_complete_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="@font/heebo_bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Complete Profile"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:backgroundTint="@color/custom_brown"
+                app:cornerRadius="10dp"
+                app:elevation="10dp" />
 
         </LinearLayout>
     </ScrollView>
