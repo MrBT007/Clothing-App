@@ -78,7 +78,6 @@
             android:layout_marginTop="10dp"
             android:layout_below="@id/fashion_model_images"
             android:layout_centerHorizontal="true"
-
             android:orientation="vertical">
 
             <LinearLayout

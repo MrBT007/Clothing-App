@@ -109,10 +109,10 @@ class SignInActivity : BaseActivity() {
             intent.putExtra(Constants.EXTRA_USER_DETAILS,user)
             startActivity(intent)
         }
-//        else {
-//            startActivity(Intent(this, UserDashboardActivity::class.java))
-//        }
-//        finish()
+        else {
+            startActivity(Intent(this, DashboardActivity::class.java))
+        }
+        finish()
     }
 
 }

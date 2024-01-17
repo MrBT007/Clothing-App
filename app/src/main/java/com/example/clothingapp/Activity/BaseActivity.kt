@@ -51,7 +51,9 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     fun hideProgressDialog(){
-        mProgressDialog.dismiss()
+        if (::mProgressDialog.isInitialized && mProgressDialog.isShowing) {
+            mProgressDialog.dismiss()
+        }
     }
 
     fun doubleBackToExit()

@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.util.Log
 import androidx.fragment.app.Fragment
+import com.example.clothingapp.Activity.CompleteProfileActivity
 import com.example.clothingapp.Activity.SignInActivity
 import com.example.clothingapp.Activity.SignUpActivity
 import com.example.clothingapp.Constant.Constants
@@ -178,65 +179,65 @@ class FirestoreClass
 //            }
 //    }
 //
-//    fun updateUserDetails(activity: Activity,userHashMap: HashMap<String,Any>)
-//    {
-//        val userMap = mapOf<String, Any>(*userHashMap.map { it.key to it.value }.toTypedArray())
-//
-//        mFireStore.collection(Constants.USERS)
-//            .document(getCurrentUserID())
-//            .update(userMap)
-//            .addOnSuccessListener {
-//                when(activity)
-//                {
-//                    is CompleteProfileActivity ->{
-//                        activity.userProfileUpdateSuccess()
-//                    }
-//                }
-//            }
-//            .addOnFailureListener { e->
-//                when(activity)
-//                {
-//                    is CompleteProfileActivity ->{
-//                        activity.hideProgressDialog()
-//                    }
-//                }
-//                Log.e(activity.javaClass.simpleName, "Error while updating user details.", e)
-//            }
-//    }
-//
-//    fun uploadImageToCloudStorage(activity: Activity,imageUri:Uri?, imageType:String)
-//    {
-//        val storageReference = FirebaseStorage.getInstance().reference
-//            .child(imageType + System.currentTimeMillis() + "."
-//                    +Constants.getFileExtension(activity,imageUri))
-//
-//        storageReference.putFile(imageUri!!).addOnSuccessListener { taskSnapshot ->
-//
-//            // Image upload is success
-////            Log.e("Firebase Image URL",
-////            taskSnapshot.metadata!!.reference!!.downloadUrl.toString())
-//
-//            // get the downloadable url from the task snapshot
-//            taskSnapshot.metadata!!.reference!!.downloadUrl
-//                .addOnSuccessListener { uri ->
-////                    Log.e("Downloadable Image URL ",uri.toString() )
-//                    when(activity)
-//                    {
-//                        is CompleteProfileActivity -> {
-//                            activity.imageUploadSuccess(uri.toString())
-//                        }
-//                    }
-//                }
-//
-//        }
-//            .addOnFailureListener {exception ->
-//                when(activity)
-//                {
-//                    is CompleteProfileActivity -> {
-//                        activity.hideProgressDialog()
-//                    }
-//                }
-//                Log.e(activity.javaClass.simpleName, exception.message,exception )
-//            }
-//    }
+    fun updateUserDetails(activity: Activity,userHashMap: HashMap<String,Any>)
+    {
+        val userMap = mapOf<String, Any>(*userHashMap.map { it.key to it.value }.toTypedArray())
+
+        mFireStore.collection(Constants.USERS)
+            .document(getCurrentUserID())
+            .update(userMap)
+            .addOnSuccessListener {
+                when(activity)
+                {
+                    is CompleteProfileActivity ->{
+                        activity.userProfileUpdateSuccess()
+                    }
+                }
+            }
+            .addOnFailureListener { e->
+                when(activity)
+                {
+                    is CompleteProfileActivity ->{
+                        activity.hideProgressDialog()
+                    }
+                }
+                Log.e(activity.javaClass.simpleName, "Error while updating user details.", e)
+            }
+    }
+
+    fun uploadImageToCloudStorage(activity: Activity,imageUri:Uri?, imageType:String)
+    {
+        val storageReference = FirebaseStorage.getInstance().reference
+            .child(imageType+"_"+getCurrentUserID()+"_" + System.currentTimeMillis() + "."
+                    +Constants.getFileExtension(activity,imageUri))
+
+        storageReference.putFile(imageUri!!).addOnSuccessListener { taskSnapshot ->
+
+            // Image upload is success
+//            Log.e("Firebase Image URL",
+//            taskSnapshot.metadata!!.reference!!.downloadUrl.toString())
+
+            // get the downloadable url from the task snapshot
+            taskSnapshot.metadata!!.reference!!.downloadUrl
+                .addOnSuccessListener { uri ->
+//                    Log.e("Downloadable Image URL ",uri.toString() )
+                    when(activity)
+                    {
+                        is CompleteProfileActivity -> {
+                            activity.imageUploadSuccess(uri.toString())
+                        }
+                    }
+                }
+
+        }
+            .addOnFailureListener {exception ->
+                when(activity)
+                {
+                    is CompleteProfileActivity -> {
+                        activity.hideProgressDialog()
+                    }
+                }
+                Log.e(activity.javaClass.simpleName, exception.message,exception )
+            }
+    }
 }

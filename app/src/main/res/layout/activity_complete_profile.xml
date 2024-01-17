@@ -147,11 +147,23 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/custom_black"
                         android:fontFamily="@font/heebo_medium"
-                        android:inputType="phone"
+                        android:inputType="numberDecimal"
+                        android:maxLength="10"
                         android:hint="Mobile Number"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+            <TextView
+                android:id="@+id/btn_verify_mobile_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/heebo_bold"
+                android:text="Verify Number"
+                android:textColor="#747474"
+                android:textSize="15sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -166,7 +178,7 @@
                     android:textColor="@color/custom_grey"
                     android:fontFamily="@font/heebo_medium"
                     android:textSize="16sp"
-                    android:id="@+id/tv_autoComplete"
+                    android:id="@+id/genderSelector"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
