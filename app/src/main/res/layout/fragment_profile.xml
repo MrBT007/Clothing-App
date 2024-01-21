@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".Fragment.ProfileFragment">
+
+    <!-- Center the TextView both vertically and horizontally -->
+    <TextView
+        android:id="@+id/profiletv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile" />
+
+    <!-- Button placed below the TextView -->
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:layout_below="@id/profiletv"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+    />
+
+</LinearLayout>
