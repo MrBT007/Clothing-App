@@ -66,6 +66,12 @@ dependencies {
 
     implementation ("androidx.fragment:fragment-ktx:1.6.2")
 
+    //dots indicator
     implementation("com.tbuonomo:dotsindicator:5.0")
+
+    //Glide
+    // image loading 3rd party feature
+    implementation("com.github.bumptech.glide:glide:4.13.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.13.0")
 
 }

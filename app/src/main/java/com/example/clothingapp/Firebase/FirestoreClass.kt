@@ -15,11 +15,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.storage.FirebaseStorage
 
+private var mUser:User? = null
+private val mFireStore = FirebaseFirestore.getInstance()
+private val mAuth = FirebaseAuth.getInstance()
 class FirestoreClass
 {
-    private val mFireStore = FirebaseFirestore.getInstance()
-    private val mAuth = FirebaseAuth.getInstance()
-    private var user:User? = null
 
     fun registerUser(activity: SignUpActivity, userInfo:User)
     {
@@ -50,7 +50,7 @@ class FirestoreClass
     }
 
     fun getUser(): User? {
-        return user
+        return mUser
     }
 
     fun updatePasswordInFirestore(userId: String, newPassword: String, onComplete: () -> Unit) {
@@ -81,7 +81,7 @@ class FirestoreClass
 
                 // here we receive the document snapshot and we convert it into data model object
                 val user = document.result.toObject(User::class.java)!!
-                this.user = user
+                mUser = user
                 Log.e("TAG",user.toString())
 
                 /* here MODE_PRIVATE is for default mode means where the created file can only be accessed
@@ -128,57 +128,57 @@ class FirestoreClass
             }
     }
 //
-//    fun getUserDetailsFragment(fragment: Fragment,callback: (User)->Unit)
-//    {
-//        mFireStore.collection(Constants.USERS)
-//            .document(getCurrentUserID())
-//            .get()
-//            .addOnCompleteListener{ document ->
-//                Log.i(fragment.javaClass.simpleName, document.toString())
-//
-//                // here we receive the document snapshot and we convert it into data model object
-//                val user = document.result.toObject(User::class.java)!!
-//
-//                callback(user)
-//
-//                /* here MODE_PRIVATE is for default mode means where the created file can only be accessed
-//                    by the calling application means to all the applicants who shares the same User ID
-//                */
-//                val sharedPreferences = fragment.requireActivity().getSharedPreferences(
-//                    Constants.RB_PREFERENCES,Context.MODE_PRIVATE
-//                )
-//
-//                // for editing shared preferences
-//                val editor: SharedPreferences.Editor = sharedPreferences.edit()
-//                /*
-//                    Key : logged_in_username
-//                    Value : Tushar Bhut (as example)
-//                */
-//
-//                editor.putString(
-//                    Constants.LOGGED_IN_USERNAME,
-//                    user.name
-//                )
-//                editor.apply()
-//                when(fragment)
-//                {
+    fun getUserDetailsFragment(fragment: Fragment,callback: (User)->Unit)
+    {
+        mFireStore.collection(Constants.USERS)
+            .document(getCurrentUserID())
+            .get()
+            .addOnCompleteListener{ document ->
+                Log.i(fragment.javaClass.simpleName, document.toString())
+
+                // here we receive the document snapshot and we convert it into data model object
+                val user = document.result.toObject(User::class.java)!!
+
+                callback(user)
+
+                /* here MODE_PRIVATE is for default mode means where the created file can only be accessed
+                    by the calling application means to all the applicants who shares the same User ID
+                */
+                val sharedPreferences = fragment.requireActivity().getSharedPreferences(
+                    Constants.RB_PREFERENCES,Context.MODE_PRIVATE
+                )
+
+                // for editing shared preferences
+                val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                /*
+                    Key : logged_in_username
+                    Value : Tushar Bhut (as example)
+                */
+
+                editor.putString(
+                    Constants.LOGGED_IN_USERNAME,
+                    user.name
+                )
+                editor.apply()
+                when(fragment)
+                {
 //                    is HomeFragment -> {
 //                        fragment.userDetailsSuccess(user)
 //                    }
-//                }
-//            }
-//            .addOnFailureListener { e->
-//                // hide progress dialog is there is any error. And print the error in log
-//                when(fragment)
-//                {
+                }
+            }
+            .addOnFailureListener { e->
+                // hide progress dialog is there is any error. And print the error in log
+                when(fragment)
+                {
 //                    is HomeFragment -> {
 //                        fragment.hideProgressDialog()
 //                    }
-//                }
-//                Log.e(fragment.javaClass.simpleName, "Error while getting user details",e )
-//            }
-//    }
-//
+                }
+                Log.e(fragment.javaClass.simpleName, "Error while getting user details",e )
+            }
+    }
+
     fun updateUserDetails(activity: Activity,userHashMap: HashMap<String,Any>)
     {
         val userMap = mapOf<String, Any>(*userHashMap.map { it.key to it.value }.toTypedArray())
