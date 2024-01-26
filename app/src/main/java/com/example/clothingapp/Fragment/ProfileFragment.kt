@@ -27,13 +27,13 @@ class ProfileFragment : Fragment() {
         val root: View = binding.root
         // Inflate the layout for this fragment
 
-        binding.logout.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val intent = Intent(requireActivity(), SignInActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-            requireActivity().finish()
-        }
+//        binding.logout.setOnClickListener {
+//            FirebaseAuth.getInstance().signOut()
+//            val intent = Intent(requireActivity(), SignInActivity::class.java)
+//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+//            startActivity(intent)
+//            requireActivity().finish()
+//        }
         return root
     }
 }

@@ -8,17 +8,17 @@
     <item
         android:id="@+id/catalogFragment"
         android:icon="@drawable/catalog"
-        android:title="Completed" />
+        android:title="Catalog" />
 
     <item
         android:id="@+id/cartFragment"
         android:icon="@drawable/cart"
-        android:title="Leaves" />
+        android:title="Cart" />
 
     <item
         android:id="@+id/likedFragment"
         android:icon="@drawable/liked"
-        android:title="Attendance"/>
+        android:title="Liked"/>
 
     <item
         android:id="@+id/profileFragment"

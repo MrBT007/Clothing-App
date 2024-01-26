@@ -1,29 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical"
-    android:gravity="center"
+    android:background="@color/white"
     tools:context=".Fragment.ProfileFragment">
 
-    <!-- Center the TextView both vertically and horizontally -->
-    <TextView
-        android:id="@+id/profiletv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!-- Button placed below the TextView -->
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log Out"
-        android:layout_below="@id/profiletv"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center_horizontal"
-    />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/heebo_bold"
+                android:textColor="@color/custom_black"
+                android:layout_gravity="center_horizontal"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:id="@+id/iv_userImage_complete_profile"
+                    android:layout_height="150dp"
+                    android:padding="10dp"
+                    android:src="@drawable/man"
+                    app:strokeWidth="3dp"
+                    app:strokeColor="@color/custom_grey"
+                    android:layout_gravity="center_horizontal"
+                    app:shapeAppearanceOverlay="@style/circularImageViewShape"/>
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="120dp"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="4dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="-50dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btn_change_picture_complete_profile"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        app:shapeAppearanceOverlay="@style/circularImageViewShape"
+                        android:src="@drawable/edit"
+                        android:background="@color/custom_brown"
+                        />
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameProfileFragment"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Esther Howard"
+                android:fontFamily="@font/heebo_bold"
+                android:textSize="18sp"
+                android:textColor="@color/custom_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:gravity="center"
+                android:id="@+id/ll_edit_profile_fragment"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/profile"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_edit_profile_fragment"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:text="Edit Profile"
+                    android:textAllCaps="false"
+                    android:textColor="@color/custom_black"
+                    android:textAlignment="textStart"
+                    android:textSize="16sp"
+                    android:layout_marginStart="20dp"
+                    app:fontFamily="@font/heebo_medium" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:id="@+id/ll_payment_methods_profile_fragment"
+                android:layout_marginTop="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/payment"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_payment_methods_profile_fragment"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:text="Payment Methods"
+                    android:textAllCaps="false"
+                    android:textColor="@color/custom_black"
+                    android:textSize="16sp"
+                    android:textAlignment="textStart"
+                    android:layout_marginStart="20dp"
+                    app:fontFamily="@font/heebo_medium" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:id="@+id/ll_orders_profile_fragment"
+                android:layout_marginTop="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/orders"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_orders_profile_fragment"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:text="My Orders"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/custom_black"
+                    android:layout_marginStart="20dp"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/heebo_medium" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:id="@+id/ll_settings_profile_fragment"
+                android:layout_marginTop="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/settings"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/btn_settings_profile_fragment"
+                    android:layout_height="match_parent"
+                    android:textAlignment="textStart"
+                    android:background="@android:color/transparent"
+                    android:text="Settings"
+                    android:textAllCaps="false"
+                    android:textColor="@color/custom_black"
+                    android:layout_marginStart="20dp"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/heebo_medium" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:id="@+id/ll_sign_out_fragment"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/logout"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart"
+                    android:id="@+id/btn_sign_out_profile_fragment"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:text="Sign Out"
+                    android:layout_marginStart="20dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/custom_black"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/heebo_medium" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="10dp"
+                    app:tint="@color/custom_brown"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -33,5 +33,4 @@
         app:itemIconTint="@drawable/bottom_navigation_selector"
         app:itemTextColor="@drawable/bottom_navigation_selector"
         app:menu="@menu/bottom_nav_bar_menu" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
