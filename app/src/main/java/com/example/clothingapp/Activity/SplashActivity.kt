@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.example.clothingapp.Firebase.FirestoreClass
 import com.example.clothingapp.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -27,7 +28,8 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun checkLoggedInState() {
-        val currentUser = mAuth.currentUser
+//        val currentUser = mAuth.currentUser
+        val currentUser = FirestoreClass().getCurrentUser(this)
         if (currentUser != null) {
             // User is already logged in, navigate to UserDashboardActivity
             startActivity(Intent(this, DashboardActivity::class.java))

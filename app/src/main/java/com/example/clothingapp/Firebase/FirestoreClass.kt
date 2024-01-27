@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import com.example.clothingapp.Activity.CompleteProfileActivity
 import com.example.clothingapp.Activity.SignInActivity
 import com.example.clothingapp.Activity.SignUpActivity
@@ -14,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.storage.FirebaseStorage
+import com.google.gson.Gson
 
 private var mUser:User? = null
 private val mFireStore = FirebaseFirestore.getInstance()
@@ -21,6 +23,7 @@ private val mAuth = FirebaseAuth.getInstance()
 class FirestoreClass
 {
 
+    private val gson = Gson()
     fun registerUser(activity: SignUpActivity, userInfo:User)
     {
         // "Users" is the collection, if it is already created then it will not create the same one again
@@ -51,6 +54,12 @@ class FirestoreClass
 
     fun getUser(): User? {
         return mUser
+    }
+
+    fun getCurrentUser(activity: Activity): User? {
+        val prefs = activity.getSharedPreferences(Constants.PREF_NAME, Context.MODE_PRIVATE)
+        val userJson = prefs.getString(Constants.KEY_USER, null)
+        return if (userJson != null) gson.fromJson(userJson, User::class.java) else null
     }
 
     fun updatePasswordInFirestore(userId: String, newPassword: String, onComplete: () -> Unit) {
@@ -88,7 +97,7 @@ class FirestoreClass
                     by the calling application means to all the applicants who shares the same User ID
                 */
                 val sharedPreferences = activity.getSharedPreferences(
-                    Constants.RB_PREFERENCES,Context.MODE_PRIVATE
+                    Constants.PREF_NAME,Context.MODE_PRIVATE
                 )
 
                 // for editing shared preferences
@@ -102,7 +111,11 @@ class FirestoreClass
                     Constants.LOGGED_IN_USERNAME,
                     user.name
                 )
+
+                val userJson = gson.toJson(user)
+                editor.putString(Constants.KEY_USER, userJson)
                 editor.apply()
+
                 when(activity)
                 {
                     is SignInActivity -> {
@@ -145,7 +158,7 @@ class FirestoreClass
                     by the calling application means to all the applicants who shares the same User ID
                 */
                 val sharedPreferences = fragment.requireActivity().getSharedPreferences(
-                    Constants.RB_PREFERENCES,Context.MODE_PRIVATE
+                    Constants.PREF_NAME,Context.MODE_PRIVATE
                 )
 
                 // for editing shared preferences
@@ -239,5 +252,10 @@ class FirestoreClass
                 }
                 Log.e(activity.javaClass.simpleName, exception.message,exception )
             }
+    }
+
+    fun logoutUser(requireActivity: FragmentActivity) {
+        val prefs = requireActivity.getSharedPreferences(Constants.PREF_NAME, Context.MODE_PRIVATE)
+        prefs.edit().remove(Constants.KEY_USER).apply()
     }
 }
