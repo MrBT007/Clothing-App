@@ -16,8 +16,9 @@ object Constants
     const val GENDER = "gender"
     const val PHONENO = "phoneNo"
     const val NAME = "name"
-    const val RB_PREFERENCES = "RBPrefs"
     const val USERS = "users"
+    const val PREF_NAME = "user_prefs"
+    const val KEY_USER = "user_key"
     const val LOGGED_IN_USERNAME = "logged_in_username"
     const val EXTRA_USER_DETAILS = "extra_user_details"
 

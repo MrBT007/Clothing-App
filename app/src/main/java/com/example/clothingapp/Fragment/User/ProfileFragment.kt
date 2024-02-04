@@ -1,50 +1,36 @@
-package com.example.clothingapp.Fragment
+package com.example.clothingapp.Fragment.User
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.clothingapp.Activity.SignInActivity
 import com.example.clothingapp.Firebase.FirestoreClass
 import com.example.clothingapp.Firebase.User
+import com.example.clothingapp.Fragment.BaseFragment
 import com.example.clothingapp.R
 import com.example.clothingapp.databinding.FragmentProfileBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 
-private var mUser: User? = null
-class ProfileFragment : BaseFragment() {
 
+class ProfileFragment : BaseFragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        showProgressDialog("Please Wait...")
+        // Inflate the layout for this fragment
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        // Inflate the layout for this fragment
 
-        // Display user data if it has been loaded
-
-        if (mUser == null) {
-            Log.i("Load Data", "onCreateView: Load 1st time")
-            loadUserDetails()
-        }
+        loadUserDetails()
 
         binding.btnSignOutProfileFragment.setOnClickListener {
             showConfirmationDialog()
@@ -66,7 +52,8 @@ class ProfileFragment : BaseFragment() {
 
         logout?.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            val intent = Intent(requireActivity(), SignInActivity::class.java)
+            FirestoreClass().logoutUser(requireActivity())
+            val intent = Intent(activity, SignInActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
             requireActivity().finish()
@@ -75,9 +62,15 @@ class ProfileFragment : BaseFragment() {
     }
 
     private fun loadUserDetails() {
-        FirestoreClass().getUserDetailsFragment(this) { user ->
-            mUser = user
-            userDetailsSuccess(user)
+        showProgressDialog("Please Wait...")
+        val currentUser = FirestoreClass().getCurrentUser(requireActivity())
+
+        if (currentUser != null) {
+            userDetailsSuccess(currentUser)
+        } else {
+            Log.e("ProfileFragment", "User is null")
+            // Handle the case where the user is not available
+            // You might want to show an error message or take some appropriate action
         }
     }
 
@@ -85,7 +78,6 @@ class ProfileFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Load user data only if it hasn't been loaded before
-        mUser?.let { userDetailsSuccess(it) }
     }
     private fun userDetailsSuccess(user: User) {
         Glide.with(this).load(user.photo).into(binding.ivUserImageCompleteProfile)

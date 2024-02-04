@@ -44,7 +44,7 @@ class SignUpActivity : BaseActivity() {
                     val firebaseUser = task.result.user
                     val user = User(
                         firebaseUser!!.uid,
-                        email,name,"","","",false
+                        email,name,"","","","user",false
                     )
 
                     FirestoreClass().registerUser(this,user)

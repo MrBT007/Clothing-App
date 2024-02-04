@@ -1,19 +1,16 @@
 package com.example.clothingapp.Activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
-import android.widget.Toast
 import com.example.clothingapp.Constant.Constants
 import com.example.clothingapp.Firebase.FirestoreClass
 import com.example.clothingapp.Firebase.User
 import com.example.clothingapp.R
 import com.example.clothingapp.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 
 class SignInActivity : BaseActivity() {
     private lateinit var binding: ActivitySignInBinding
@@ -27,19 +24,17 @@ class SignInActivity : BaseActivity() {
         }
 
         binding.btnLoginFromLogin.setOnClickListener {
-            showProgressDialog("Please wait...")
             validateAndLoginUser()
         }
 
         binding.btnForgotPasswordFromLogin.setOnClickListener {
             startActivity(Intent(this,ForgotPasswordActivity::class.java))
         }
-
-
     }
 
     private fun validateAndLoginUser() {
         if(loginDetailsValidated()){
+            showProgressDialog("Please wait...")
             loginUser()
         }
     }
@@ -101,10 +96,10 @@ class SignInActivity : BaseActivity() {
         Log.i("First Name:",user.name)
         Log.i("Email:",user.email)
 
+        Log.i("com.example.clothingapp.Firebase.UserManager", "User saved: ${user.name}")
 //        Toast.makeText(this, "Congrats ${user.name} you are logged in", Toast.LENGTH_SHORT).show()
         if(!user.profileCompleted)
         {
-
             val intent = Intent(this, CompleteProfileActivity::class.java)
             intent.putExtra(Constants.EXTRA_USER_DETAILS,user)
             startActivity(intent)

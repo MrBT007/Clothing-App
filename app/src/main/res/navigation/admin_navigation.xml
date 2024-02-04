@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_navigation"
+    app:startDestination="@id/adminHomeFragment">
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.example.clothingapp.Fragment.Admin.AdminHomeFragment"
+        android:label="fragment_admin_home"
+        tools:layout="@layout/fragment_admin_home" >
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminProductFragment"
+            app:destination="@id/adminProductFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminPendingOrdersFragment"
+            app:destination="@id/adminPendingOrdersFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminCompletedOrdersFragment"
+            app:destination="@id/adminCompletedOrdersFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_adminProfileFragment"
+            app:destination="@id/adminProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminProductFragment"
+        android:name="com.example.clothingapp.Fragment.Admin.AdminProductFragment"
+        android:label="fragment_admin_product"
+        tools:layout="@layout/fragment_admin_product" >
+        <action
+            android:id="@+id/action_adminProductFragment_to_adminCompletedOrdersFragment"
+            app:destination="@id/adminCompletedOrdersFragment" />
+        <action
+            android:id="@+id/action_adminProductFragment_to_adminProfileFragment"
+            app:destination="@id/adminProfileFragment" />
+        <action
+            android:id="@+id/action_adminProductFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_adminProductFragment_to_adminPendingOrdersFragment"
+            app:destination="@id/adminPendingOrdersFragment" />
+        <action
+            android:id="@+id/action_adminProductFragment_to_adminHomeFragment2"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_adminProductFragment_to_adminCompletedOrdersFragment2"
+            app:destination="@id/adminCompletedOrdersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminPendingOrdersFragment"
+        android:name="com.example.clothingapp.Fragment.Admin.AdminPendingOrdersFragment"
+        android:label="fragment_admin_pending_orders"
+        tools:layout="@layout/fragment_admin_pending_orders" >
+        <action
+            android:id="@+id/action_adminPendingOrdersFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_adminPendingOrdersFragment_to_adminProductFragment"
+            app:destination="@id/adminProductFragment" />
+        <action
+            android:id="@+id/action_adminPendingOrdersFragment_to_adminCompletedOrdersFragment"
+            app:destination="@id/adminCompletedOrdersFragment" />
+        <action
+            android:id="@+id/action_adminPendingOrdersFragment_to_adminProfileFragment"
+            app:destination="@id/adminProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminCompletedOrdersFragment"
+        android:name="com.example.clothingapp.Fragment.Admin.AdminCompletedOrdersFragment"
+        android:label="fragment_admin_completed_orders"
+        tools:layout="@layout/fragment_admin_completed_orders" >
+        <action
+            android:id="@+id/action_adminCompletedOrdersFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_adminCompletedOrdersFragment_to_adminProfileFragment"
+            app:destination="@id/adminProfileFragment" />
+        <action
+            android:id="@+id/action_adminCompletedOrdersFragment_to_adminProductFragment"
+            app:destination="@id/adminProductFragment" />
+        <action
+            android:id="@+id/action_adminCompletedOrdersFragment_to_adminPendingOrdersFragment"
+            app:destination="@id/adminPendingOrdersFragment" />
+        <action
+            android:id="@+id/action_adminCompletedOrdersFragment_to_adminHomeFragment2"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_adminCompletedOrdersFragment_to_adminProductFragment2"
+            app:destination="@id/adminProductFragment" />
+        <action
+            android:id="@+id/action_adminCompletedOrdersFragment_to_adminPendingOrdersFragment2"
+            app:destination="@id/adminPendingOrdersFragment" />
+        <action
+            android:id="@+id/action_adminCompletedOrdersFragment_to_adminProfileFragment2"
+            app:destination="@id/adminProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminProfileFragment"
+        android:name="com.example.clothingapp.Fragment.Admin.AdminProfileFragment"
+        android:label="fragment_admin_profile"
+        tools:layout="@layout/fragment_admin_profile" >
+        <action
+            android:id="@+id/action_adminProfileFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment" />
+        <action
+            android:id="@+id/action_adminProfileFragment_to_adminProductFragment"
+            app:destination="@id/adminProductFragment" />
+        <action
+            android:id="@+id/action_adminProfileFragment_to_adminCompletedOrdersFragment"
+            app:destination="@id/adminCompletedOrdersFragment" />
+        <action
+            android:id="@+id/action_adminProfileFragment_to_adminPendingOrdersFragment"
+            app:destination="@id/adminPendingOrdersFragment" />
+    </fragment>
+</navigation>

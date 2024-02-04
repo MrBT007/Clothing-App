@@ -1,4 +1,4 @@
-package com.example.clothingapp.Fragment
+package com.example.clothingapp.Fragment.User
 
 import CardPagerAdapter
 import android.os.Bundle

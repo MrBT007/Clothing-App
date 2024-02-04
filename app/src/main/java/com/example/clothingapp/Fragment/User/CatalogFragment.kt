@@ -1,4 +1,4 @@
-package com.example.clothingapp.Fragment
+package com.example.clothingapp.Fragment.User
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.clothingapp.R
 
-class LikedFragment : Fragment() {
-
+class CatalogFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,7 +17,7 @@ class LikedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_liked, container, false)
+        return inflater.inflate(R.layout.fragment_catalog, container, false)
     }
 
 }
