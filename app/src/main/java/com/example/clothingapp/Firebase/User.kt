@@ -11,5 +11,6 @@ data class User(
     val gender:String="",
     val phoneNo:String="",
     val photo:String="",
+    val role:String="",
     val profileCompleted:Boolean=false,
 ):Parcelable

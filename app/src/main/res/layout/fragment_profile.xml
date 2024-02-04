@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".Fragment.ProfileFragment">
+    tools:context=".Fragment.User.ProfileFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -43,28 +43,6 @@
                     app:strokeColor="@color/custom_grey"
                     android:layout_gravity="center_horizontal"
                     app:shapeAppearanceOverlay="@style/circularImageViewShape"/>
-
-                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:cardCornerRadius="120dp"
-                    app:strokeColor="@color/white"
-                    app:strokeWidth="4dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="-50dp">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/btn_change_picture_complete_profile"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="10dp"
-                        app:shapeAppearanceOverlay="@style/circularImageViewShape"
-                        android:src="@drawable/edit"
-                        android:background="@color/custom_brown"
-                        />
-
-                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatTextView

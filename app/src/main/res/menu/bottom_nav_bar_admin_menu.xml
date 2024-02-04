@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/adminHomeFragment"
+        android:icon="@drawable/home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/adminProductFragment"
+        android:icon="@drawable/catalog"
+        android:title="Products" />
+
+    <item
+        android:id="@+id/adminPendingOrdersFragment"
+        android:icon="@drawable/cart"
+        android:title="Pending" />
+
+    <item
+        android:id="@+id/adminCompletedOrdersFragment"
+        android:icon="@drawable/liked"
+        android:title="Completed"/>
+
+    <item
+        android:id="@+id/adminProfileFragment"
+        android:icon="@drawable/profile"
+        android:title="Profile" />
+</menu>

@@ -1,4 +1,4 @@
-package com.example.clothingapp.Fragment
+package com.example.clothingapp.Fragment.User
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.clothingapp.Activity.SignInActivity
 import com.example.clothingapp.Firebase.FirestoreClass
 import com.example.clothingapp.Firebase.User
+import com.example.clothingapp.Fragment.BaseFragment
 import com.example.clothingapp.R
 import com.example.clothingapp.databinding.FragmentProfileBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.clothingapp.Fragment.HomeFragment"
+        android:name="com.example.clothingapp.Fragment.User.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/catalogFragment"
-        android:name="com.example.clothingapp.Fragment.CatalogFragment"
+        android:name="com.example.clothingapp.Fragment.User.CatalogFragment"
         android:label="fragment_catalog"
         tools:layout="@layout/fragment_catalog" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.example.clothingapp.Fragment.CartFragment"
+        android:name="com.example.clothingapp.Fragment.User.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" >
         <action
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/likedFragment"
-        android:name="com.example.clothingapp.Fragment.LikedFragment"
+        android:name="com.example.clothingapp.Fragment.User.LikedFragment"
         android:label="fragment_liked"
         tools:layout="@layout/fragment_liked" >
         <action
@@ -91,7 +91,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.clothingapp.Fragment.ProfileFragment"
+        android:name="com.example.clothingapp.Fragment.User.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
